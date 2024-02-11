@@ -1,0 +1,36 @@
+---
+const navItems = [
+  {
+    title: "Tu tienda",
+  },
+  {
+    title: "Nuevo y destacable",
+  },
+  {
+    title: "Categorías",
+  },
+  {
+    title: "Tienda de puntos",
+  },
+  {
+    title: "Noticias",
+  },
+  {
+    title: "Laboratorios",
+  },
+];
+
+import SearchBox from "./SearchBox.astro";
+---
+
+
+<nav class="flex flex-row justify-between mt-7 items-center bg-gradient-to-r from-[#3e6796ea] via-[#3a78b1e6] to-[#0f216e]">
+    {
+        navItems.map((item) => (
+            <span class="px-5 pb-1 text-center hover:bg-gradient-to-r from-[#21a2ff40] via-[#21a2ff40} to-[#32323300] cursor-pointer">
+                <a class="text-xs  font-medium text-center" href="#">{item.title}</a>
+            </span>
+        ))
+    }
+    <SearchBox />
+</nav>

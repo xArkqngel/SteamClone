@@ -1,0 +1,46 @@
+---
+const navItems = [
+  {
+    title: "TIENDA",
+    label: "shop",
+    url: "/#shop",
+  },
+  {
+    title: "COMUNIDAD",
+    label: "comunity",
+    url: "/#comunity",
+  },
+  {
+    title: "ACERCA DE",
+    label: "about",
+    url: "/#about",
+  },
+  {
+    title: "SOPORTE",
+    label: "support",
+    url: "/#support",
+  },
+];
+---
+
+
+<header class="flex flex-row justify-center gap-x-16">
+    <div class="flex flex-row justify-center items-center gap-x-10 p-6">
+      <img src="https://store.akamai.steamstatic.com/public/shared/images/header/logo_steam.svg?t=962016" alt="steam-header-logo" class="w-[176px] h-[44]">
+      <nav class="flex flex-row gap-x-4">
+          {
+              navItems.map((link)=>(
+                  <a class="font-semibold text-slate-100 hover:text-white" href={link.url} class="text-white">{link.title}</a>
+              ))
+          }
+      </nav> 
+    </div>
+    <div class="flex flex-row text-xs text-center mt-1 gap-x-2 font-normal">
+      <button class="bg-[#5c7e10] text-white  px-4 py-1 h-6">Instalar Steam</button>
+      <div class="flex flex-row gap-x-2 text-gray-400" >
+        <a href="#" class="">Iniciar sesión</a>
+        <p class="">|</p>
+        <a href="#" class="">Idioma</a>
+      </div>
+    </div>
+</header>

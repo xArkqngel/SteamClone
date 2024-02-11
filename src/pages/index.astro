@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import NavBar from '../components/NavBar.astro';
+---
+
+<Layout title="Bienvenidos a Steam">
+	<Header />
+	<main>
+		<section class="sectionBackground flex flex-col justify-center items-center h-[450px]">
+			<NavBar />
+			<div class="h-[385px] w-screen hover:cursor-pointer">
+
+			</div>
+		</section>
+	</main>	
+</Layout>
+
+<style>
+	main {
+		width: 100%;
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	.sectionBackground {
+		background-image: url('https://clan.akamai.steamstatic.com/images/1541443/d99637732a48c270a0a2811f15af700856faf614.jpg');
+		background-position: center;
+	}
+
+</style>
