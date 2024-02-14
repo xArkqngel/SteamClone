@@ -13,6 +13,7 @@ const { title } = Astro.props;
 		<meta name="description" content="Steam clone created with Astro" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="https://store.steampowered.com/favicon.ico" />
+		<link href="https://fonts.cdnfonts.com/css/motiva-sans" rel="stylesheet">
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
@@ -22,7 +23,7 @@ const { title } = Astro.props;
 </html>
 <style is:global>
 	html {
-		font-family: system-ui, sans-serif;
+		font-family: 'Motiva Sans', sans-serif;
 		background: #171d25;
 		background-size: 224px;
 	}

@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import NavBar from '../components/NavBar.astro';
+import VerticalNav from '../components/VerticalNav.astro';
+import Slideshow from '../components/SlideshowD&R.astro';
 ---
 
 <Layout title="Bienvenidos a Steam">
@@ -10,7 +12,12 @@ import NavBar from '../components/NavBar.astro';
 		<section class="sectionBackground flex flex-col justify-center items-center h-[450px]">
 			<NavBar />
 			<div class="h-[385px] w-screen hover:cursor-pointer">
-
+			</div>
+		</section>
+		<section class="flex flex-row justify-end bg-[#1b2838] pt-5">
+			<VerticalNav />
+			<div class="flex flex-col w-full items-start">
+				<Slideshow />
 			</div>
 		</section>
 	</main>	

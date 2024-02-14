@@ -1,0 +1,40 @@
+---
+interface game {
+    name: string;
+    price: number;
+    bgImage: string;
+    images: string[];
+}
+
+const {game} = Astro.props;
+---
+
+<div class="gameContainer flex flex-row width-[940px]">
+    <div class="w-[616px]">
+        <img src={game.bgImage} alt="gameCover" class=" w-[616px] h-[353px]">
+    </div>
+    <div class="">
+        <h2 class="pt-3 pl-3 text-2xl">{game.name}</h2> 
+        <div class="pt-5 grid grid-cols-2 gap-3">
+            {game.images.map((image) => (
+                <img src={image} alt="gameImage" class="w-[150px] h-[69px]">
+            ))}
+        </div>
+        <div class="pl-3 pt-2">
+            <h3 class="text-[21px]">Ya disponible</h3>
+            <p class="bg-[#ffffff33] text-[11px] pl-1 max-w-[90px] rounded-sm ">Lo más vendido</p>
+            <div class="flex flex-row justify-between text-[11px] mt-14">
+                <p>{game.price}</p>
+                <img src="https://store.akamai.steamstatic.com/public/images/v6/icon_platform_win.png?v=3" alt="steamLogo" class="size-[20px]">
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .gameContainer {
+        background-image: url(https://store.akamai.steamstatic.com/public/images/v6/home/background_maincap_2.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }    
+</style>

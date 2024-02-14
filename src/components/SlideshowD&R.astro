@@ -1,0 +1,342 @@
+---
+import GameDisplay from "./GameDisplay.astro"
+const games = [
+    {
+        name: 'Overwatch® 2',
+        price: 'Free to Play',
+        bgImage: 'https://cdn.akamai.steamstatic.com/steam/apps/2357570/capsule_616x353_alt_assets_0_spanish.jpg?t=1707864284',
+        images: [
+            'https://cdn.akamai.steamstatic.com/steam/apps/2357570/ss_6a84ab8e2cf763d7168c26da42708206704a2df7.600x338.jpg',
+            'https://cdn.akamai.steamstatic.com/steam/apps/2357570/ss_4d403b52b200d215b33cafd60a532d874942521b.600x338.jpg',
+            'https://cdn.akamai.steamstatic.com/steam/apps/2357570/ss_37ec34347af03163fb9b8ac0ff3ce945a1730e68.600x338.jpg',
+            'https://cdn.akamai.steamstatic.com/steam/apps/2357570/ss_bf76751f54570bb93e910f46d67f7ec83c48ef32.600x338.jpg'
+        ]
+    },
+    {
+        name: 'Apex Legends™',
+        price: 'Free to Play',
+        bgImage: 'https://cdn.akamai.steamstatic.com/steam/apps/1172470/capsule_616x353.jpg?t=1707852068',
+        images: [
+            'https://cdn.akamai.steamstatic.com/steam/apps/1172470/ss_c75144f4a9c3771806a72ff939752c15456aa557.600x338.jpg',
+            'https://cdn.akamai.steamstatic.com/steam/apps/1172470/ss_b5051a24edf949582756c313eebf6f61582ce25f.600x338.jpg',
+            'https://cdn.akamai.steamstatic.com/steam/apps/1172470/ss_a47a8c9b09393bd4cddfeb2891beb4d1eafb2897.600x338.jpg',
+            'https://cdn.akamai.steamstatic.com/steam/apps/1172470/ss_ed4087e1f7e85905df637304ac4e511def7943e7.600x338.jpg',
+        ]
+    },
+    {
+        name: 'Palworld',
+        price: 'COP $70.000',
+        bgImage: 'https://cdn.akamai.steamstatic.com/steam/apps/1623730/capsule_616x353.jpg?t=1707904340',
+        images: [
+            'https://cdn.akamai.steamstatic.com/steam/apps/1623730/ss_a9fa84f0c21bc536f00925ab4586e8c4f587c2b7.600x338.jpg',
+            'https://cdn.akamai.steamstatic.com/steam/apps/1623730/ss_06e27c15c7b4b10233c937b887cf6a6925c83009.600x338.jpg',
+            'https://cdn.akamai.steamstatic.com/steam/apps/1623730/ss_f81b7c4f20be3b99f76a1415c4cdb9b444c99b97.600x338.jpg',
+            'https://cdn.akamai.steamstatic.com/steam/apps/1623730/ss_b3cea7c9f04a67d784d4c6a0c157a11d6268b189.600x338.jpg',
+        ]
+    },
+    {
+        name: 'Counter-Strike 2',
+        price: 'Free to Play',
+        bgImage: 'https://cdn.akamai.steamstatic.com/steam/apps/730/capsule_616x353.jpg?t=1698860631',
+        images: [
+            'https://cdn.akamai.steamstatic.com/steam/apps/730/ss_796601d9d67faf53486eeb26d0724347cea67ddc.600x338.jpg',
+            'https://cdn.akamai.steamstatic.com/steam/apps/730/ss_d830cfd0550fbb64d80e803e93c929c3abb02056.600x338.jpg',
+            'https://cdn.akamai.steamstatic.com/steam/apps/730/ss_0f8cf82d019c614760fd20801f2bb4001da7ea77.600x338.jpg',
+            'https://cdn.akamai.steamstatic.com/steam/apps/730/ss_13bb35638c0267759276f511ee97064773b37a51.600x338.jpg',
+        ]
+    },
+    {
+        name: 'Red Dead Redemption 2',
+        price: 'COP $199.900',
+        bgImage: 'https://web.archive.org/web/20240212171718/https://cdn.akamai.steamstatic.com/steam/apps/1174180/capsule_616x353.jpg?t=1695140956',
+        images: [
+            'https://web.archive.org/web/20240212190021/https://cdn.akamai.steamstatic.com/steam/apps/1174180/ss_66b553f4c209476d3e4ce25fa4714002cc914c4f.600x338.jpg',
+            'https://web.archive.org/web/20240212190021/https://cdn.akamai.steamstatic.com/steam/apps/1174180/ss_d1a8f5a69155c3186c65d1da90491fcfd43663d9.600x338.jpg',
+            'https://web.archive.org/web/20240212190021/https://cdn.akamai.steamstatic.com/steam/apps/1174180/ss_668dafe477743f8b50b818d5bbfcec669e9ba93e.600x338.jpg',
+            'https://web.archive.org/web/20240212190021/https://cdn.akamai.steamstatic.com/steam/apps/1174180/ss_4ce07ae360b166f0f650e9a895a3b4b7bf15e34f.600x338.jpg',
+        ]
+    }
+]
+---
+
+<div id="slideshow-wrap">
+    <input type="radio" id="button-1" name="controls" checked="checked"/>
+    <label for="button-1"></label>
+    <input type="radio" id="button-2" name="controls"/>
+    <label for="button-2"></label>
+    <input type="radio" id="button-3" name="controls"/>
+    <label for="button-3"></label>
+    <input type="radio" id="button-4" name="controls"/>
+    <label for="button-4"></label>
+    <input type="radio" id="button-5" name="controls"/>
+    <label for="button-5"></label>
+    <label for="button-1" class="arrows" id="arrow-1">
+        <div class="arrowLeftContainer">
+            <div class="arrow"></div>
+        </div>
+    </label>
+    <label for="button-2" class="arrows" id="arrow-2">
+        <div class="arrowLeftContainer">
+            <div class="arrow"></div>
+        </div>
+    </label>
+    <label for="button-3" class="arrows" id="arrow-3">
+        <div class="arrowLeftContainer">
+            <div class="arrow"></div>
+        </div>
+    </label>
+    <label for="button-4" class="arrows" id="arrow-4">
+        <div class="arrowLeftContainer">
+            <div class="arrow"></div>
+        </div>
+    </label>
+    <label for="button-5" class="arrows" id="arrow-5">
+        <div class="arrowLeftContainer">
+            <div class="arrow"></div>
+        </div>
+    </label>
+    <div id="slideshow-inner">
+        <ul>
+            <li id="slide1">
+                <GameDisplay game={games[0]} />
+            </li>
+            <li id="slide2">
+                <GameDisplay game={games[1]} />
+            </li>
+            <li id="slide3">
+                <GameDisplay game={games[2]} />
+            </li>
+            <li id="slide4">
+                <GameDisplay game={games[3]} />
+            </li>
+            <li id="slide5">
+                <GameDisplay game={games[4]} />
+            </li>
+        </ul>
+    </div>
+</div>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 { color: white }
+
+#slideshow-wrap {
+    height: 353px;
+    width: 940px;
+    margin-left: 70px;
+    -webkit-box-shadow: 0px 0px 5px rgba(0,0,0,.8);
+    -moz-box-shadow: 0px 0px 5px rgba(0,0,0,.8);
+    box-shadow: 0px 0px 5px rgba(0,0,0,.8);
+    margin-top: 20px;
+    position: relative;
+}
+
+#slideshow-inner {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0,0,0);
+    overflow: hidden;
+    position: relative;
+}
+
+#slideshow-inner>ul {
+    list-style: none;
+    height: 100%;
+    width: 500%;
+    overflow: hidden;
+    position: relative;
+    left: 0px;
+    -webkit-transition: left .8s cubic-bezier(0.77, 0, 0.175, 1);
+    -moz-transition: left .8s cubic-bezier(0.77, 0, 0.175, 1);
+    -o-transition: left .8s cubic-bezier(0.77, 0, 0.175, 1);
+    transition: left .8s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+#slideshow-inner>ul>li {
+    width: 20%;
+    height: 353px;
+    float: left;
+    position: relative;
+}
+
+#slideshow-inner>ul>li>img {
+    margin: auto;
+    height: 100%;
+    width: 100%;
+}
+
+#slideshow-wrap input[type=radio] {
+    position: absolute;
+    left: 50%;
+    bottom: 15px;
+    z-index: 100;
+    visibility: hidden;
+}
+
+#slideshow-wrap label:not(.arrows):not(.show-description-label) {
+    position: absolute;
+    left: 50%;
+    bottom: -25px;
+    z-index: 100;
+    width: 15px;
+    height: 9px;
+    background-color: rgba(255, 255, 255, .2);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 20%;
+    cursor: pointer;
+    -webkit-box-shadow: 0px 0px 3px rgba(0,0,0,.8);
+    -moz-box-shadow: 0px 0px 3px rgba(0,0,0,.8);
+    box-shadow: 0px 0px 3px rgba(0,0,0,.8);
+    -webkit-transition: background-color .2s;
+    -moz-transition: background-color .2s;
+    -o-transition: background-color .2s;
+    transition: background-color .2s;
+}
+
+#slideshow-wrap label:not(.arrows):active { bottom: -46px }
+
+#slideshow-wrap input[type=radio]#button-1:checked~label[for=button-1] { background-color: rgba(255, 255, 255, .8) }
+#slideshow-wrap input[type=radio]#button-2:checked~label[for=button-2] { background-color: rgba(255, 255, 255, .8) }
+#slideshow-wrap input[type=radio]#button-3:checked~label[for=button-3] { background-color: rgba(255, 255, 255, .8) }
+#slideshow-wrap input[type=radio]#button-4:checked~label[for=button-4] { background-color: rgba(255, 255, 255, .8) }
+#slideshow-wrap input[type=radio]#button-5:checked~label[for=button-5] { background-color: rgba(255, 255, 255, .8) }
+
+#slideshow-wrap label[for=button-1] { margin-left: -36px }
+
+#slideshow-wrap label[for=button-2] { margin-left: -18px }
+
+#slideshow-wrap label[for=button-4] { margin-left: 18px }
+
+#slideshow-wrap label[for=button-5] { margin-left: 36px }
+
+#slideshow-wrap input[type=radio]#button-1:checked~#slideshow-inner>ul { left: 0 }
+
+#slideshow-wrap input[type=radio]#button-2:checked~#slideshow-inner>ul { left: -100% }
+
+#slideshow-wrap input[type=radio]#button-3:checked~#slideshow-inner>ul { left: -200% }
+
+#slideshow-wrap input[type=radio]#button-4:checked~#slideshow-inner>ul { left: -300% }
+
+#slideshow-wrap input[type=radio]#button-5:checked~#slideshow-inner>ul { left: -400% }
+
+label.arrows {
+    font-size: 25px;
+    color: rgb(255,255,240);
+    position: absolute;
+    top: 45%;
+    margin-top: -25px;
+    display: none;
+    opacity: 0.7;
+    cursor: pointer;
+    z-index: 1000;
+    background-color: transparent;
+    -webkit-transition: opacity .2s;
+    -moz-transition: opacity .2s;
+    -o-transition: opacity .2s;
+    transition: opacity .2s;
+    text-shadow: 0px 0px 3px rgba(0,0,0,.8);
+}
+
+.arrowLeftContainer {
+    background-image: linear-gradient( to left, rgba( 0, 0, 0, 0.3) 5%,rgba( 0, 0, 0, 0) 95%);
+    padding: 35px 15px 35px 15px;
+}
+
+.arrowLeftContainer:hover {
+    background-image: linear-gradient( to left, #2A475E,rgba( 255, 255, 255, 0) 95%);
+    padding: 35px 15px 35px 15px;
+}
+
+.arrow{
+	background-image: url(https://store.akamai.steamstatic.com/public/images/v6/arrows.png);
+	width: 23px;
+	height: 36px;
+}
+
+label.arrows:hover { opacity: 1 }
+
+label.arrows:active { margin-top: -23px }
+
+input[type=radio]#button-1:checked~.arrows#arrow-2, input[type=radio]#button-2:checked~.arrows#arrow-3, input[type=radio]#button-3:checked~.arrows#arrow-4, input[type=radio]#button-4:checked~.arrows#arrow-5 {
+    right: -55px;
+    display: block;
+}
+
+input[type=radio]#button-2:checked~.arrows#arrow-1, input[type=radio]#button-3:checked~.arrows#arrow-2, input[type=radio]#button-4:checked~.arrows#arrow-3, input[type=radio]#button-5:checked~.arrows#arrow-4 {
+    left: -55px;
+    display: block;
+    -webkit-transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+    -ms-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+input[type=radio]#button-2:checked~.arrows#arrow-1 { left: -19px }
+
+input[type=radio]#button-3:checked~.arrows#arrow-2 { left: -37px }
+
+input[type=radio]#button-5:checked~.arrows#arrow-4 { left: -73px }
+
+.description {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 260px;
+    font-family: 'Yanone Kaffeesatz';
+    z-index: 1000;
+}
+
+.description input { visibility: hidden }
+
+.description label {
+    font-family: 'WebSymbolsRegular';
+    background-color: rgba(255,255,240,1);
+    position: relative;
+    left: -17px;
+    top: 00px;
+    width: 40px;
+    height: 27px;
+    display: inline-block;
+    text-align: center;
+    padding-top: 7px;
+    border-bottom-right-radius: 15px;
+    cursor: pointer;
+    opacity: 0;
+    -webkit-transition: opacity .2s;
+    -moz-transition: opacity .2s;
+    -o-transition: opacity .2s;
+    transition: opacity .2s;
+    z-index: 5;
+    color: rgb(20,20,20);
+}
+
+#slideshow-inner>ul>li:hover .description label { opacity: 1 }
+
+.description input[type=checkbox]:checked~label { opacity: 1 }
+
+.description .description-text {
+    background-color: rgba(255,255,230,.5);
+    padding-left: 45px;
+    padding-top: 25px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    position: relative;
+    top: -35px;
+    z-index: 4;
+    opacity: 0;
+    -webkit-transition: opacity .2s;
+    -moz-transition: opacity .2s;
+    -o-transition: opacity .2s;
+    transition: opacity .2s;
+    color: rgb(20,20,20);
+}
+
+.description input[type=checkbox]:checked~.description-text { opacity: 1 }
+</style>

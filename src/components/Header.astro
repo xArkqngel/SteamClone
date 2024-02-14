@@ -27,20 +27,23 @@ const navItems = [
 <header class="flex flex-row justify-center gap-x-16">
     <div class="flex flex-row justify-center items-center gap-x-10 p-6">
       <img src="https://store.akamai.steamstatic.com/public/shared/images/header/logo_steam.svg?t=962016" alt="steam-header-logo" class="w-[176px] h-[44]">
-      <nav class="flex flex-row gap-x-4">
+      <nav class="flex flex-row gap-x-4 ">
           {
               navItems.map((link)=>(
-                  <a class="font-semibold text-slate-100 hover:text-white" href={link.url} class="text-white">{link.title}</a>
+                  <a class="font-medium text-[16px] text-slate-100 hover:text-white" href={link.url} class="text-white">{link.title}</a>
               ))
           }
       </nav> 
     </div>
-    <div class="flex flex-row text-xs text-center mt-1 gap-x-2 font-normal">
-      <button class="bg-[#5c7e10] text-white  px-4 py-1 h-6">Instalar Steam</button>
+    <div class="flex flex-row text-[11px] text-center mt-1 gap-x-2 font-normal">
+      <button class="flex flex-row gap-x-2 items-center bg-[#5c7e10] text-white  px-4 py-1 h-6">
+        <img src="https://store.akamai.steamstatic.com/public/shared/images/header/btn_header_installsteam_download.png?v=1" alt="install-steam" class="size-[12px]">
+        Instalar Steam
+      </button>
       <div class="flex flex-row gap-x-2 text-gray-400" >
-        <a href="#" class="">Iniciar sesión</a>
+        <a href="#" class="hover:text-white">Iniciar sesión</a>
         <p class="">|</p>
-        <a href="#" class="">Idioma</a>
+        <a href="#" class="hover:text-white">Idioma</a>
       </div>
     </div>
 </header>
