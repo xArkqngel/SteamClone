@@ -1,0 +1,293 @@
+---
+import GameDisplay from "./GameDisplay.astro"
+const games = [
+    {
+        ogPrice: 'COL$ 250.000',
+        discount: '30%',
+        price: 'COL$ 175.000',
+        offerEndDate: 'La oferta termina el 19 Feb @ 1:00pm',
+        bgImage: 'https://cdn.cloudflare.steamstatic.com/steam/spotlights/17b639a9cf389a9f2f0a66f8/spotlight_image_english.jpg?t=1707521023',
+    },
+    {
+        ogPrice: 'COL$ 16.500',
+        discount: '50%',
+        price: 'COL$ 8.250',
+        offerEndDate: 'Juega gratis hasta el jueves a las 10 a.m. PT.',
+        bgImage: 'https://cdn.cloudflare.steamstatic.com/steam/spotlights/17b639a9cf389a9f2f0a66f8/spotlight_image_english.jpg?t=1707521023',
+    },
+    {
+        ogPrice: 'COL$ 199.900',
+        discount: '67%',
+        price: 'COL$ 65.967',
+        bgImage: 'https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/header.jpg?t=1695140956',
+    },
+    {
+        ogPrice: 'COL$ 199.999',
+        discount: '92%',
+        price: 'COL$ 15.999',
+        bgImage: 'https://cdn.cloudflare.steamstatic.com/steam/apps/1238810/header.jpg?t=1701356409',
+    },
+    {
+        ogPrice: 'COL$ 115.900',
+        discount: '35%',
+        price: 'COL$ 75.335',
+        offerEndDate: 'La oferta termina el 19 Feb @ 1:00pm',
+        bgImage: 'https://cdn.cloudflare.steamstatic.com/steam/spotlights/17b639a9cf389a9f2f0a66f8/spotlight_image_english.jpg?t=1707521023',
+    },
+    {
+        ogPrice: 'COL$ 199.999',
+        discount: '50%',
+        price: 'COL$ 99.999',
+        bgImage: 'https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/header.jpg?t=1706698946',
+    },
+    {
+        ogPrice: 'COL$ 110.500',
+        discount: '67%',
+        price: 'COL$ 36.365',
+        bgImage: 'https://cdn.cloudflare.steamstatic.com/steam/apps/264710/header.jpg?t=1700522118',
+    },
+    {
+        ogPrice: 'COL$ 154.999',
+        discount: '75%',
+        price: 'COL$ 38.749',
+        bgImage: 'https://cdn.cloudflare.steamstatic.com/steam/subs/124923/header_ratio.jpg?t=1671055800',
+    },
+    {
+        ogPrice: 'COL$ 234.900',
+        discount: '30%',
+        price: 'COL$ 164.430',
+        bgImage: 'https://cdn.cloudflare.steamstatic.com/steam/apps/1888160/header.jpg?t=1696573287',
+    },
+    {
+        ogPrice: 'COL$ 299.999',
+        discount: '30%',
+        price: 'COL$ 209.999',
+        bgImage: 'https://cdn.cloudflare.steamstatic.com/steam/apps/2519060/header.jpg?t=1707527854',
+    },
+    {
+        ogPrice: 'COL$ 234.999',
+        discount: '80%',
+        price: 'COL$ 46.999',
+        bgImage: 'https://cdn.cloudflare.steamstatic.com/steam/apps/1517290/header.jpg?t=1707841121',
+    },
+    {
+        ogPrice: 'COL$ 159.999',
+        discount: '90%',
+        price: 'COL$ 15.999',
+        bgImage: 'https://cdn.cloudflare.steamstatic.com/steam/apps/1238840/header.jpg?t=1701356405',
+    },
+    {
+        ogPrice: 'COL$ 349.999',
+        discount: '40%',
+        price: 'COL$ 209.999',
+        bgImage: 'https://cdn.cloudflare.steamstatic.com/steam/apps/2344520/header.jpg?t=1706806800',
+    },
+    {
+        ogPrice: 'COL$ 284.900',
+        discount: '50%',
+        price: 'COL$ 142.450',
+        bgImage: 'https://cdn.cloudflare.steamstatic.com/steam/subs/94174/header_ratio.jpg?t=1476893662',
+    },
+    {
+        ogPrice: 'COL$ 129.900',
+        discount: '50%',
+        price: 'COL$ 64.950',
+        bgImage: 'https://cdn.cloudflare.steamstatic.com/steam/apps/1850570/header.jpg?t=1707757419',
+    },
+]
+---
+
+<div id="slideshow-wrap-SO">
+    <input type="radio" id="btnSO1" name="controls-SO" checked="checked"/>
+    <label for="btnSO1"></label>
+    <input type="radio" id="btnSO2" name="controls-SO"/>
+    <label for="btnSO2"></label>
+    <input type="radio" id="btnSO3" name="controls-SO"/>
+    <label for="btnSO3"></label>
+    <label for="btnSO1" class="arrows-SO" id="arrowSO1">
+        <div class="arrowLeftContainerSO">
+            <div class="arrow"></div>
+        </div>
+    </label>
+    <label for="btnSO2" class="arrows-SO" id="arrowSO2">
+        <div class="arrowLeftContainerSO">
+            <div class="arrow"></div>
+        </div>
+    </label>
+    <label for="btnSO3" class="arrows-SO" id="arrowSO3">
+        <div class="arrowLeftContainerSO">
+            <div class="arrow"></div>
+        </div>
+    </label>
+    <div id="slideshowInnerSO">
+        <ul>
+            <li id="slideSO1">
+            </li>
+            <li id="slideSO2">
+            </li>
+            <li id="slideSO3">
+            </li>
+        </ul>
+    </div>
+</div>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 { color: white }
+
+#slideshow-wrap-SO {
+    height: 353px;
+    width: 940px;
+    -webkit-box-shadow: 0px 0px 5px rgba(0,0,0,.8);
+    -moz-box-shadow: 0px 0px 5px rgba(0,0,0,.8);
+    box-shadow: 0px 0px 5px rgba(0,0,0,.8);
+    margin-top: 10px;
+    position: relative;
+}
+
+#slideshowInnerSO {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0,0,0);
+    overflow: hidden;
+    position: relative;
+}
+
+#slideshowInnerSO>ul {
+    list-style: none;
+    height: 100%;
+    width: 500%;
+    overflow: hidden;
+    position: relative;
+    left: 0px;
+    -webkit-transition: left .8s ease-in-out;
+    -moz-transition: left .8s ease-in-out;
+    -o-transition: left .8s ease-in-out;
+    transition: left .8s ease-in-out;
+}
+
+#slideshowInnerSO>ul>li {
+    width: 20%;
+    height: 353px;
+    float: left;
+    position: relative;
+}
+
+#slideshowInnerSO>ul>li>img {
+    margin: auto;
+    height: 100%;
+    width: 100%;
+}
+
+#slideshow-wrap-SO input[type=radio] {
+    position: absolute;
+    left: 50%;
+    bottom: 15px;
+    z-index: 100;
+    visibility: hidden;
+}
+
+#slideshow-wrap-SO label:not(.arrows-SO):not(.show-description-label) {
+    position: absolute;
+    left: 50%;
+    bottom: -25px;
+    z-index: 100;
+    width: 15px;
+    height: 9px;
+    background-color: rgba(255, 255, 255, .2);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 20%;
+    cursor: pointer;
+    -webkit-box-shadow: 0px 0px 3px rgba(0,0,0,.8);
+    -moz-box-shadow: 0px 0px 3px rgba(0,0,0,.8);
+    box-shadow: 0px 0px 3px rgba(0,0,0,.8);
+    -webkit-transition: background-color .2s;
+    -moz-transition: background-color .2s;
+    -o-transition: background-color .2s;
+    transition: background-color .2s;
+}
+
+#slideshow-wrap-SO label:not(.arrows-SO):active { bottom: -25px }
+
+#slideshow-wrap-SO input[type=radio]#btnSO1:checked~label[for=btnSO1] { background-color: rgba(255, 255, 255, .8) }
+#slideshow-wrap-SO input[type=radio]#btnSO2:checked~label[for=btnSO2] { background-color: rgba(255, 255, 255, .8) }
+#slideshow-wrap-SO input[type=radio]#btnSO3:checked~label[for=btnSO3] { background-color: rgba(255, 255, 255, .8) }
+
+#slideshow-wrap-SO label[for=btnSO1] { margin-left: -18px }
+
+#slideshow-wrap-SO label[for=btnSO2] { margin-left: 0px }
+
+#slideshow-wrap-SO label[for=btnSO3] { margin-left: 18px }
+
+#slideshow-wrap-SO input[type=radio]#btnSO1:checked~#slideshowInnerSO>ul { left: 0 }
+
+#slideshow-wrap-SO input[type=radio]#btnSO2:checked~#slideshowInnerSO>ul { left: -100% }
+
+#slideshow-wrap-SO input[type=radio]#btnSO3:checked~#slideshowInnerSO>ul { left: -200% }
+
+label.arrows-SO {
+    font-size: 25px;
+    color: rgb(255,255,240);
+    position: absolute;
+    top: 45%;
+    margin-top: -25px;
+    display: none;
+    opacity: 0.7;
+    cursor: pointer;
+    z-index: 1000;
+    background-color: transparent;
+    -webkit-transition: opacity .2s;
+    -moz-transition: opacity .2s;
+    -o-transition: opacity .2s;
+    transition: opacity .2s;
+    text-shadow: 0px 0px 3px rgba(0,0,0,.8);
+}
+
+.arrowLeftContainerSO {
+    background-image: linear-gradient( to left, rgba( 0, 0, 0, 0.3) 5%,rgba( 0, 0, 0, 0) 95%);
+    padding: 35px 15px 35px 15px;
+}
+
+.arrowLeftContainerSO:hover {
+    background-image: linear-gradient( to left, #2A475E,rgba( 255, 255, 255, 0) 95%);
+    padding: 35px 15px 35px 15px;
+}
+
+.arrow{
+	background-image: url(https://store.akamai.steamstatic.com/public/images/v6/arrows.png);
+	width: 23px;
+	height: 36px;
+}
+
+label.arrows-SO:hover { opacity: 1 }
+
+label.arrows-SO:active { margin-top: -23px }
+
+input[type=radio]#btnSO1:checked~.arrows-SO#arrowSO2, input[type=radio]#btnSO2:checked~.arrows-SO#arrowSO3, input[type=radio]#btnSO3:checked~.arrows-SO#arrowSO1{
+    right: -55px;
+    display: block;
+}
+
+input[type=radio]#btnSO2:checked~.arrows-SO#arrowSO1, input[type=radio]#btnSO3:checked~.arrows-SO#arrowSO2,input[type=radio]#btnSO1:checked~.arrows-SO#arrowSO3{
+    left: -55px;
+    display: block;
+    -webkit-transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+    -ms-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+input[type=radio]#btnSO2:checked~.arrows-SO#arrowSO1 { left: -30px }
+
+input[type=radio]#btnSO3:checked~.arrows-SO#arrowSO2 { left: -48px }
+
+input[type=radio]#btnSO1:checked~.arrows-SO#arrowSO3 { left: -66px }
+
+</style>

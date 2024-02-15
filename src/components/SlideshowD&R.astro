@@ -128,11 +128,10 @@ h1 { color: white }
 #slideshow-wrap {
     height: 353px;
     width: 940px;
-    margin-left: 70px;
     -webkit-box-shadow: 0px 0px 5px rgba(0,0,0,.8);
     -moz-box-shadow: 0px 0px 5px rgba(0,0,0,.8);
     box-shadow: 0px 0px 5px rgba(0,0,0,.8);
-    margin-top: 20px;
+    margin-top: 10px;
     position: relative;
 }
 
@@ -151,10 +150,10 @@ h1 { color: white }
     overflow: hidden;
     position: relative;
     left: 0px;
-    -webkit-transition: left .8s cubic-bezier(0.77, 0, 0.175, 1);
-    -moz-transition: left .8s cubic-bezier(0.77, 0, 0.175, 1);
-    -o-transition: left .8s cubic-bezier(0.77, 0, 0.175, 1);
-    transition: left .8s cubic-bezier(0.77, 0, 0.175, 1);
+    -webkit-transition: left .8s ease-in-out;
+    -moz-transition: left .8s ease-in-out;
+    -o-transition: left .8s ease-in-out;
+    transition: left .8s ease-in-out;
 }
 
 #slideshow-inner>ul>li {
@@ -199,7 +198,7 @@ h1 { color: white }
     transition: background-color .2s;
 }
 
-#slideshow-wrap label:not(.arrows):active { bottom: -46px }
+#slideshow-wrap label:not(.arrows):active { bottom: -25px }
 
 #slideshow-wrap input[type=radio]#button-1:checked~label[for=button-1] { background-color: rgba(255, 255, 255, .8) }
 #slideshow-wrap input[type=radio]#button-2:checked~label[for=button-2] { background-color: rgba(255, 255, 255, .8) }
@@ -263,12 +262,12 @@ label.arrows:hover { opacity: 1 }
 
 label.arrows:active { margin-top: -23px }
 
-input[type=radio]#button-1:checked~.arrows#arrow-2, input[type=radio]#button-2:checked~.arrows#arrow-3, input[type=radio]#button-3:checked~.arrows#arrow-4, input[type=radio]#button-4:checked~.arrows#arrow-5 {
+input[type=radio]#button-1:checked~.arrows#arrow-2, input[type=radio]#button-2:checked~.arrows#arrow-3, input[type=radio]#button-3:checked~.arrows#arrow-4, input[type=radio]#button-4:checked~.arrows#arrow-5, input[type=radio]#button-5:checked~.arrows#arrow-1 {
     right: -55px;
     display: block;
 }
 
-input[type=radio]#button-2:checked~.arrows#arrow-1, input[type=radio]#button-3:checked~.arrows#arrow-2, input[type=radio]#button-4:checked~.arrows#arrow-3, input[type=radio]#button-5:checked~.arrows#arrow-4 {
+input[type=radio]#button-1:checked~.arrows#arrow-5, input[type=radio]#button-2:checked~.arrows#arrow-1, input[type=radio]#button-3:checked~.arrows#arrow-2, input[type=radio]#button-4:checked~.arrows#arrow-3, input[type=radio]#button-5:checked~.arrows#arrow-4 {
     left: -55px;
     display: block;
     -webkit-transform: scaleX(-1);
@@ -278,65 +277,12 @@ input[type=radio]#button-2:checked~.arrows#arrow-1, input[type=radio]#button-3:c
     transform: scaleX(-1);
 }
 
+input[type=radio]#button-1:checked~.arrows#arrow-5 { left: -91px }
+
 input[type=radio]#button-2:checked~.arrows#arrow-1 { left: -19px }
 
 input[type=radio]#button-3:checked~.arrows#arrow-2 { left: -37px }
 
 input[type=radio]#button-5:checked~.arrows#arrow-4 { left: -73px }
 
-.description {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 260px;
-    font-family: 'Yanone Kaffeesatz';
-    z-index: 1000;
-}
-
-.description input { visibility: hidden }
-
-.description label {
-    font-family: 'WebSymbolsRegular';
-    background-color: rgba(255,255,240,1);
-    position: relative;
-    left: -17px;
-    top: 00px;
-    width: 40px;
-    height: 27px;
-    display: inline-block;
-    text-align: center;
-    padding-top: 7px;
-    border-bottom-right-radius: 15px;
-    cursor: pointer;
-    opacity: 0;
-    -webkit-transition: opacity .2s;
-    -moz-transition: opacity .2s;
-    -o-transition: opacity .2s;
-    transition: opacity .2s;
-    z-index: 5;
-    color: rgb(20,20,20);
-}
-
-#slideshow-inner>ul>li:hover .description label { opacity: 1 }
-
-.description input[type=checkbox]:checked~label { opacity: 1 }
-
-.description .description-text {
-    background-color: rgba(255,255,230,.5);
-    padding-left: 45px;
-    padding-top: 25px;
-    padding-right: 15px;
-    padding-bottom: 15px;
-    position: relative;
-    top: -35px;
-    z-index: 4;
-    opacity: 0;
-    -webkit-transition: opacity .2s;
-    -moz-transition: opacity .2s;
-    -o-transition: opacity .2s;
-    transition: opacity .2s;
-    color: rgb(20,20,20);
-}
-
-.description input[type=checkbox]:checked~.description-text { opacity: 1 }
 </style>

@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import NavBar from '../components/NavBar.astro';
 import VerticalNav from '../components/VerticalNav.astro';
 import Slideshow from '../components/SlideshowD&R.astro';
+import SlideshowOffers from '../components/SlideshowOffers.astro';
 ---
 
 <Layout title="Bienvenidos a Steam">
@@ -16,8 +17,15 @@ import Slideshow from '../components/SlideshowD&R.astro';
 		</section>
 		<section class="flex flex-row justify-end bg-[#1b2838] pt-5">
 			<VerticalNav />
-			<div class="flex flex-col w-full items-start">
+			<div class="flex flex-col w-full items-start ml-[70px]">
+				<h2 class="text-sm">DESTADOS Y RECOMENDADOS</h2>
 				<Slideshow />
+				<div class="mt-20">
+					<img src="https://cdn.cloudflare.steamstatic.com/steam/clusters/takeunder/05c5576603e7e08269683432/takeunder_desktop_spanish.jpg?t=1707773188" alt="banner" />
+				</div>
+				<div class="mb-20">
+					<SlideshowOffers />
+				</div>
 			</div>
 		</section>
 	</main>	
