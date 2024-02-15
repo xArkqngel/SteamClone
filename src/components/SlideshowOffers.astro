@@ -1,4 +1,5 @@
 ---
+import GameCard from "./GameCard.astro"
 import GameDisplay from "./GameDisplay.astro"
 const games = [
     {
@@ -6,14 +7,14 @@ const games = [
         discount: '30%',
         price: 'COL$ 175.000',
         offerEndDate: 'La oferta termina el 19 Feb @ 1:00pm',
-        bgImage: 'https://cdn.cloudflare.steamstatic.com/steam/spotlights/17b639a9cf389a9f2f0a66f8/spotlight_image_english.jpg?t=1707521023',
+        bgImage: 'https://cdn.cloudflare.steamstatic.com/steam/spotlights/2e5e7a7828ff62e178f155de/spotlight_image_english.jpg?t=1706302426',
     },
     {
         ogPrice: 'COL$ 16.500',
         discount: '50%',
         price: 'COL$ 8.250',
         offerEndDate: 'Juega gratis hasta el jueves a las 10 a.m. PT.',
-        bgImage: 'https://cdn.cloudflare.steamstatic.com/steam/spotlights/17b639a9cf389a9f2f0a66f8/spotlight_image_english.jpg?t=1707521023',
+        bgImage: 'https://cdn.cloudflare.steamstatic.com/steam/spotlights/1c7a574450b2235a278bb2a1/spotlight_image_english.png?t=1707155100',
     },
     {
         ogPrice: 'COL$ 199.900',
@@ -122,10 +123,43 @@ const games = [
     <div id="slideshowInnerSO">
         <ul>
             <li id="slideSO1">
+                <div class="flex flex-row gap-x-2">
+                    <GameCard game={games[0]} />
+                    <GameCard game={games[1]} />
+                    <div class="flex flex-col gap-y-9">
+                        <GameCard game={games[2]} />
+                        <GameCard game={games[3]} />
+                    </div>
+                </div>
             </li>
             <li id="slideSO2">
+                <div class="flex flex-row gap-x-2">
+                    <GameCard game={games[4]} />
+                    <div class="flex flex-col gap-y-9">
+                        <GameCard game={games[5]} />
+                        <GameCard game={games[6]} />
+                    </div>
+                    <div class="flex flex-col gap-y-9">
+                        <GameCard game={games[7]} />
+                        <GameCard game={games[8]} />
+                    </div>
+                </div>
             </li>
             <li id="slideSO3">
+                <div class="flex flex-row gap-x-2">
+                    <div class="flex flex-col gap-y-9">
+                        <GameCard game={games[9]} />
+                        <GameCard game={games[10]} />
+                    </div>
+                    <div class="flex flex-col gap-y-9">
+                        <GameCard game={games[11]} />
+                        <GameCard game={games[12]} />
+                    </div>
+                    <div class="flex flex-col gap-y-9">
+                        <GameCard game={games[13]} />
+                        <GameCard game={games[14]} />
+                    </div>
+                </div>
             </li>
         </ul>
     </div>
@@ -141,11 +175,8 @@ const games = [
 h1 { color: white }
 
 #slideshow-wrap-SO {
-    height: 353px;
+    height: 350px;
     width: 940px;
-    -webkit-box-shadow: 0px 0px 5px rgba(0,0,0,.8);
-    -moz-box-shadow: 0px 0px 5px rgba(0,0,0,.8);
-    box-shadow: 0px 0px 5px rgba(0,0,0,.8);
     margin-top: 10px;
     position: relative;
 }
@@ -153,7 +184,7 @@ h1 { color: white }
 #slideshowInnerSO {
     width: 100%;
     height: 100%;
-    background-color: rgb(0,0,0);
+    background-color: transparent;
     overflow: hidden;
     position: relative;
 }

@@ -1,0 +1,38 @@
+---
+const {price, discount, priceWithDiscount} = Astro.props;
+---
+
+<div class="flex flex-row">
+    <div class="bg-[#4c6b22] text-[#BEEE11] text-[24px] px-[5px] font-medium leading-8">
+        -{discount}
+    </div>
+    <div class="flex flex-col px-2 justify-center items-end bg-[#263950]">
+        <div class="original-price">
+            {price}
+        </div>
+        <div class="discounted-price text-[#BEEE11] text-[13px] leading-3">
+            {priceWithDiscount}
+        </div>
+    </div>
+</div>
+
+<style>
+    .original-price {
+        position: relative;
+        width: fit-content;
+        color: #738895;
+        font-size: 10px;
+        line-height: 12px;
+    }
+
+    .original-price::before {
+        content: '';
+        left: 0px;
+        right: 0px;
+        position: absolute;
+        top: 43%;
+        border-bottom: 1.5px solid #738895;
+        transform: skewY(-8deg);
+        box-shadow: 0 0 2px black;
+    }
+</style>
