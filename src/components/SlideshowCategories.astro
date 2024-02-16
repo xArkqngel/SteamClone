@@ -1,0 +1,361 @@
+---
+import CategoryCard from "./CategoryCard.astro"
+import GameDisplay from "./GameDisplay.astro"
+const categories = [
+    {
+        name: "CIENCIA FICCIÓN Y CYBERPUNKS",
+        bgImage: "https://store.steampowered.com/categories/homepageimage/category/science_fiction?cc=us&l=latam",
+        bgColor: "rgb(139,0,0)",
+    },
+    {
+        name: "ESTRATEGIA",
+        bgImage: "https://store.steampowered.com/categories/homepageimage/category/strategy?cc=us&l=latam",
+        bgColor: "rgb(0,0,139)",
+    },
+    {
+        name: "SUPERVIVENCIA",
+        bgImage: "https://store.steampowered.com/categories/homepageimage/category/survival?cc=us&l=latam",
+        bgColor: "rgb(184,134,11)",
+    },
+    {
+        name: "TÍTULOS DE REALIDAD VIRTUAL",
+        bgImage: "https://store.steampowered.com/categories/homepageimage/vr?cc=us&l=latam",
+        bgColor: "rgb(0,100,0)",
+    },
+    {
+        name: "ANIME",
+        bgImage: "https://store.steampowered.com/categories/homepageimage/category/anime?cc=us&l=latam",
+        bgColor: "rgb(0,139,139)",
+    },
+    {
+        name: "COOPERATIVOS",
+        bgImage: "https://store.steampowered.com/categories/homepageimage/category/multiplayer_coop?cc=us&l=latam",
+        bgColor: "rgb(139,0,139)",
+    },
+    {
+        name: "CIUDADES Y ASENTAMIENTOS",
+        bgImage: "https://store.steampowered.com/categories/homepageimage/category/strategy_cities_settlements?cc=us&l=latam",
+        bgColor: "rgb(233,140,0)",
+    },
+    {
+        name: "SIMULADORES",
+        bgImage: "https://store.steampowered.com/categories/homepageimage/category/simulation?cc=us&l=latam",
+        bgColor: "rgb(139,0,0)",
+    },
+    {
+        name: "ACCIÓN",
+        bgImage: "https://store.steampowered.com/categories/homepageimage/category/action?cc=us&l=latam",
+        bgColor: "rgb(0,0,139)",
+    },
+    {
+        name: "FREE TO PLAY",
+        bgImage: "https://store.steampowered.com/categories/homepageimage/freetoplay?cc=us&l=latam",
+        bgColor: "rgb(184,134,11)",
+    },
+    {
+        name: "AVENTURA",
+        bgImage: "https://store.steampowered.com/categories/homepageimage/category/adventure?cc=us&l=latam",
+        bgColor: "rgb(0,100,0)",
+    },
+    {
+        name: "ROL",
+        bgImage: "https://store.steampowered.com/categories/homepageimage/category/rpg?cc=us&l=latam",
+        bgColor: "rgb(0,139,139)",
+    },
+    {
+        name: "CARRERAS",
+        bgImage: "https://store.steampowered.com/categories/homepageimage/category/racing?cc=us&l=latam",
+        bgColor: "rgb(139,0,139)",
+    },
+    {
+        name: "MUNDO ABIERTO",
+        bgImage: "https://store.steampowered.com/categories/homepageimage/category/exploration_open_world?cc=us&l=latam",
+        bgColor: "rgb(233,140,0)",
+    },
+    {
+        name: "ROMPECABEZAS",
+        bgImage: "https://store.steampowered.com/categories/homepageimage/category/puzzle_matching/?cc=us&l=latam",
+        bgColor: "rgb(139,0,0)",
+    },
+    {
+        name: "NOVELAS VISUALES",
+        bgImage: "https://store.steampowered.com/categories/homepageimage/category/visual_novel?cc=us&l=latam",
+        bgColor: "rgb(0,0,139)",
+    },
+    {
+        name: "TERROR",
+        bgImage: "https://store.steampowered.com/categories/homepageimage/category/horror?cc=us&l=latam",
+        bgColor: "rgb(184,134,11)",
+    },
+    {
+        name: "LUCHA",
+        bgImage: "https://store.steampowered.com/categories/homepageimage/category/horror?cc=us&l=latam",
+        bgColor: "rgb(0,100,0)",
+    },
+    {
+        name: "CASUALES",
+        bgImage: "https://store.steampowered.com/categories/homepageimage/category/casual?cc=us&l=latamV",
+        bgColor: "rgb(0,139,139)",
+    },
+    {
+        name: "ROGUELIKE",
+        bgImage: "https://store.steampowered.com/categories/homepageimage/category/rogue_like_rogue_lite?cc=us&l=latam",
+        bgColor: "rgb(139,0,139)",
+    }
+]
+---
+
+<div id="slideshow-wrap-CAT">
+    <input type="radio" id="btnCAT1" name="controlsCAT" checked="checked"/>
+    <label for="btnCAT1"></label>
+    <input type="radio" id="btnCAT2" name="controlsCAT"/>
+    <label for="btnCAT2"></label>
+    <input type="radio" id="btnCAT3" name="controlsCAT"/>
+    <label for="btnCAT3"></label>
+    <input type="radio" id="btnCAT4" name="controlsCAT"/>
+    <label for="btnCAT4"></label>
+    <input type="radio" id="btnCAT5" name="controlsCAT"/>
+    <label for="btnCAT5"></label>
+    <label for="btnCAT1" class="arrowsCAT" id="arrowCAT1">
+        <div class="arrowLeftContainer">
+            <div class="arrow"></div>
+        </div>
+    </label>
+    <label for="btnCAT2" class="arrowsCAT" id="arrowCAT2">
+        <div class="arrowLeftContainer">
+            <div class="arrow"></div>
+        </div>
+    </label>
+    <label for="btnCAT3" class="arrowsCAT" id="arrowCAT3">
+        <div class="arrowLeftContainer">
+            <div class="arrow"></div>
+        </div>
+    </label>
+    <label for="btnCAT4" class="arrowsCAT" id="arrowCAT4">
+        <div class="arrowLeftContainer">
+            <div class="arrow"></div>
+        </div>
+    </label>
+    <label for="btnCAT5" class="arrowsCAT" id="arrowCAT5">
+        <div class="arrowLeftContainer">
+            <div class="arrow"></div>
+        </div>
+    </label>
+    <div id="slideshow-inner-CAT">
+        <ul>
+            <li id="slideCAT1">
+                <div class="flex flex-row gap-3">
+                    {
+                        categories.slice(0,4).map((category, index) => (
+                            <CategoryCard category={category} />
+                        ))
+                    }
+                </div>
+            </li>
+            <li id="slideCAT2">
+                <div class="flex flex-row gap-3">
+                    {
+                        categories.slice(4,8).map((category, index) => (
+                            <CategoryCard category={category} />
+                        ))
+                    }
+                </div>
+            </li>
+            <li id="slideCAT3">
+                <div class="flex flex-row gap-2">
+                    {
+                        categories.slice(8,12).map((category, index) => (
+                            <CategoryCard category={category} />
+                        ))
+                    }
+                </div>
+            </li>
+            <li id="slideCAT4">
+                <div class="flex flex-row gap-2">
+                    {
+                        categories.slice(12,16).map((category, index) => (
+                            <CategoryCard category={category} />
+                        ))
+                    }
+                </div>
+            </li>
+            <li id="slideCAT5">
+                <div class="flex flex-row gap-2">
+                    {
+                        categories.slice(16,20).map((category, index) => (
+                            <CategoryCard category={category} />
+                        ))
+                    }
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 { color: white }
+
+#slideshow-wrap-CAT {
+    height: 245px;
+    width: 940px;
+    margin-top: 10px;
+    position: relative;
+}
+
+#slideshow-inner-CAT {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    overflow: hidden;
+    position: relative;
+}
+
+#slideshow-inner-CAT>ul {
+    list-style: none;
+    height: 100%;
+    width: 500%;
+    overflow: hidden;
+    position: relative;
+    left: 0px;
+    -webkit-transition: left .8s ease-in-out;
+    -moz-transition: left .8s ease-in-out;
+    -o-transition: left .8s ease-in-out;
+    transition: left .8s ease-in-out;
+}
+
+#slideshow-inner-CAT>ul>li {
+    width: 20%;
+    height: 245px;
+    float: left;
+    position: relative;
+}
+
+#slideshow-inner-CAT>ul>li>img {
+    margin: auto;
+    height: 100%;
+    width: 100%;
+}
+
+#slideshow-wrap-CAT input[type=radio] {
+    position: absolute;
+    left: 50%;
+    bottom: 15px;
+    z-index: 100;
+    visibility: hidden;
+}
+
+#slideshow-wrap-CAT label:not(.arrowsCAT):not(.show-description-label) {
+    position: absolute;
+    left: 50%;
+    bottom: -25px;
+    z-index: 100;
+    width: 15px;
+    height: 9px;
+    background-color: rgba(255, 255, 255, .2);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 20%;
+    cursor: pointer;
+    -webkit-box-shadow: 0px 0px 3px rgba(0,0,0,.8);
+    -moz-box-shadow: 0px 0px 3px rgba(0,0,0,.8);
+    box-shadow: 0px 0px 3px rgba(0,0,0,.8);
+    -webkit-transition: background-color .2s;
+    -moz-transition: background-color .2s;
+    -o-transition: background-color .2s;
+    transition: background-color .2s;
+}
+
+#slideshow-wrap-CAT label:not(.arrowsCAT):active { bottom: -25px }
+
+#slideshow-wrap-CAT input[type=radio]#btnCAT1:checked~label[for=btnCAT1] { background-color: rgba(255, 255, 255, .8) }
+#slideshow-wrap-CAT input[type=radio]#btnCAT2:checked~label[for=btnCAT2] { background-color: rgba(255, 255, 255, .8) }
+#slideshow-wrap-CAT input[type=radio]#btnCAT3:checked~label[for=btnCAT3] { background-color: rgba(255, 255, 255, .8) }
+#slideshow-wrap-CAT input[type=radio]#btnCAT4:checked~label[for=btnCAT4] { background-color: rgba(255, 255, 255, .8) }
+#slideshow-wrap-CAT input[type=radio]#btnCAT5:checked~label[for=btnCAT5] { background-color: rgba(255, 255, 255, .8) }
+
+#slideshow-wrap-CAT label[for=btnCAT1] { margin-left: -36px }
+
+#slideshow-wrap-CAT label[for=btnCAT2] { margin-left: -18px }
+
+#slideshow-wrap-CAT label[for=btnCAT4] { margin-left: 18px }
+
+#slideshow-wrap-CAT label[for=btnCAT5] { margin-left: 36px }
+
+#slideshow-wrap-CAT input[type=radio]#btnCAT1:checked~#slideshow-inner-CAT>ul { left: 0 }
+
+#slideshow-wrap-CAT input[type=radio]#btnCAT2:checked~#slideshow-inner-CAT>ul { left: -100% }
+
+#slideshow-wrap-CAT input[type=radio]#btnCAT3:checked~#slideshow-inner-CAT>ul { left: -200% }
+
+#slideshow-wrap-CAT input[type=radio]#btnCAT4:checked~#slideshow-inner-CAT>ul { left: -300% }
+
+#slideshow-wrap-CAT input[type=radio]#btnCAT5:checked~#slideshow-inner-CAT>ul { left: -400% }
+
+label.arrowsCAT {
+    font-size: 25px;
+    color: rgb(255,255,240);
+    position: absolute;
+    top: 45%;
+    margin-top: -30px;
+    display: none;
+    opacity: 0.7;
+    cursor: pointer;
+    z-index: 1000;
+    background-color: transparent;
+    -webkit-transition: opacity .2s;
+    -moz-transition: opacity .2s;
+    -o-transition: opacity .2s;
+    transition: opacity .2s;
+    text-shadow: 0px 0px 3px rgba(0,0,0,.8);
+}
+
+.arrowLeftContainer {
+    background-image: linear-gradient( to left, rgba( 0, 0, 0, 0.3) 5%,rgba( 0, 0, 0, 0) 95%);
+    padding: 35px 15px 35px 15px;
+}
+
+.arrowLeftContainer:hover {
+    background-image: linear-gradient( to left, #2A475E,rgba( 255, 255, 255, 0) 95%);
+    padding: 35px 15px 35px 15px;
+}
+
+.arrow{
+	background-image: url(https://store.akamai.steamstatic.com/public/images/v6/arrows.png);
+	width: 23px;
+	height: 36px;
+}
+
+label.arrowsCAT:hover { opacity: 1 }
+
+label.arrowsCAT:active { margin-top: -23px }
+
+input[type=radio]#btnCAT1:checked~.arrowsCAT#arrowCAT2, input[type=radio]#btnCAT2:checked~.arrowsCAT#arrowCAT3, input[type=radio]#btnCAT3:checked~.arrowsCAT#arrowCAT4, input[type=radio]#btnCAT4:checked~.arrowsCAT#arrowCAT5, input[type=radio]#btnCAT5:checked~.arrowsCAT#arrowCAT1 {
+    right: -55px;
+    display: block;
+}
+
+input[type=radio]#btnCAT1:checked~.arrowsCAT#arrowCAT5, input[type=radio]#btnCAT2:checked~.arrowsCAT#arrowCAT1, input[type=radio]#btnCAT3:checked~.arrowsCAT#arrowCAT2, input[type=radio]#btnCAT4:checked~.arrowsCAT#arrowCAT3, input[type=radio]#btnCAT5:checked~.arrowsCAT#arrowCAT4 {
+    left: -55px;
+    display: block;
+    -webkit-transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+    -ms-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+input[type=radio]#btnCAT1:checked~.arrowsCAT#arrowCAT5 { left: -91px }
+
+input[type=radio]#btnCAT2:checked~.arrowsCAT#arrowCAT1 { left: -19px }
+
+input[type=radio]#btnCAT3:checked~.arrowsCAT#arrowCAT2 { left: -37px }
+
+input[type=radio]#btnCAT5:checked~.arrowsCAT#arrowCAT4 { left: -73px }
+
+</style>

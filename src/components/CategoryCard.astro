@@ -1,0 +1,19 @@
+---
+const { category } = Astro.props;
+---
+
+<div class="relative w-[24%] pt-2 mb-4 hover:scale-105 transition-transform duration-200">
+    <img src={category.bgImage} class="size-[225px]" alt={category.name} />
+    <div class="bgGradient" style={{ background: `linear-gradient(180deg, transparent, ${category.bgColor} 100%)` }}></div>
+    <h3 class="absolute bottom-4 w-full text-center p-4 text-base font-bold cursor-pointer">{category.name}</h3>
+</div>
+
+<style>
+    .bgGradient {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+    }
+</style>

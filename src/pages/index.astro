@@ -5,12 +5,18 @@ import NavBar from '../components/NavBar.astro';
 import VerticalNav from '../components/VerticalNav.astro';
 import Slideshow from '../components/SlideshowD&R.astro';
 import SlideshowOffers from '../components/SlideshowOffers.astro';
+import SlideshowCategories from '../components/SlideshowCategories.astro';
 ---
 
 <Layout title="Bienvenidos a Steam">
 	<Header />
 	<main>
-		<section class="sectionBackground flex flex-col justify-center items-center h-[450px]">
+		<section class="sectionBackground flex flex-col justify-center items-center h-[420px]">
+			<div class="bgVideo absolute w-full overflow-hidden z-0">
+				<video autoplay muted loop>
+					<source src="https://cdn.cloudflare.steamstatic.com/steam/clusters/frontpage/65b8f08efe2288a7cb56e345/webm_page_bg_latam.webm?t=1707952653" type="video/webm">
+				</video>
+			</div>
 			<NavBar />
 			<div class="h-[385px] w-screen hover:cursor-pointer">
 			</div>
@@ -27,6 +33,11 @@ import SlideshowOffers from '../components/SlideshowOffers.astro';
 					<h2 class="text-sm">OFERTAS ESPECIALES</h2>
 					<SlideshowOffers />
 				</div>
+				<div class="mt-20">
+					<h2 class="text-sm">EXPLORAR POR CATEGORÍA</h2>
+					<SlideshowCategories />
+				</div>
+				
 			</div>
 		</section>
 	</main>	
