@@ -6,13 +6,14 @@ import VerticalNav from '../components/VerticalNav.astro';
 import Slideshow from '../components/SlideshowD&R.astro';
 import SlideshowOffers from '../components/SlideshowOffers.astro';
 import SlideshowCategories from '../components/SlideshowCategories.astro';
+import ExploreCard from '../components/ExploreCard.astro';
 ---
 
 <Layout title="Bienvenidos a Steam">
 	<Header />
 	<main>
 		<section class="sectionBackground flex flex-col justify-center items-center h-[450px]">
-			<div class="fullscreen-bg absolute h-[450px] w-screen z-50 ">
+			<div class="fullscreen-bg absolute h-[450px] w-screen z-40 ">
 				<div class="gradient-right"></div>
 				<div class="gradient-left"></div>
 			</div>
@@ -42,7 +43,23 @@ import SlideshowCategories from '../components/SlideshowCategories.astro';
 					<h2 class="text-sm">EXPLORAR POR CATEGORÍA</h2>
 					<SlideshowCategories />
 				</div>
-				
+				<div class="mt-20 w-[940px] h-[130px]">
+					<div class="flex flex-col justify-center items-center text-[15px] text-[#8f98a0] p-4 bg-[#00000033] gap-3">
+						<div>Inicia sesión para ver recomendacipnes personalizadas</div>
+						<a class="p-1 inline-block cursor-pointer text-[#d2e885] bg-gradient-to-b from-[#a4d007] to-[#536904] hover:text-white">
+							<span class="py-0 px-4">Iniciar sesión</span></a>
+						<div>O <b class="text-white">regístrate</b> y únete a Steam de forma gratuita</div>
+					</div>
+				</div>
+				<div class="mt-10  w-[940px]">
+					<h2 class="text-sm mb-2">EXPLORAR STEAM</h2>
+					<div class="grid grid-cols-4 gap-2">
+						<ExploreCard>NOVEDADES</ExploreCard>
+						<ExploreCard>NOVEDADES</ExploreCard>
+						<ExploreCard>NOVEDADES</ExploreCard>
+						<ExploreCard>NOVEDADES</ExploreCard>
+					</div>
+				</div>
 			</div>
 		</section>
 	</main>	
