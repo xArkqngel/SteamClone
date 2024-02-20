@@ -12,9 +12,14 @@ import SlideshowCategories from '../components/SlideshowCategories.astro';
 	<Header />
 	<main>
 		<section class="sectionBackground flex flex-col justify-center items-center h-[450px]">
-			<div class="bgVideo absolute w-full overflow-hidden z-0">
+			<div class="fullscreen-bg absolute h-[450px] w-screen z-50 ">
+				<div class="gradient-right"></div>
+				<div class="gradient-left"></div>
+			</div>
+			<div class="bgVideo absolute w-full ml-3 overflow-hidden z-0">
 				<video class="ml-1.5" autoplay muted loop playsinline poster="https://web.archive.org/web/20240216163249im_/https://cdn.akamai.steamstatic.com/steam/clusters/frontpage/65b8f08efe2288a7cb56e345/page_bg_spanish.jpg?t=1707952653">
 					<source src="https://cdn.cloudflare.steamstatic.com/steam/clusters/frontpage/65b8f08efe2288a7cb56e345/webm_page_bg_latam.webm?t=1707952653" type="video/webm">
+					<source src="https://cdn.akamai.steamstatic.com/steam/clusters/frontpage/65b8f08efe2288a7cb56e345/mp4_page_bg_spanish.mp4?t=1707952653" type="video/mp4">
 				</video>
 			</div>
 			<NavBar />
@@ -50,9 +55,21 @@ import SlideshowCategories from '../components/SlideshowCategories.astro';
 		font-size: 20px;
 		line-height: 1.6;
 	}
-	.sectionBackground {
-		background-image: url('https://clan.akamai.steamstatic.com/images/1541443/d99637732a48c270a0a2811f15af700856faf614.jpg');
-		background-position: center;
+	
+	.gradient-left {
+		position: absolute;
+		left: 0;
+		width: 200px;
+		height: 100%;
+		background: -webkit-gradient(linear, right top, left top, color-stop(0%, rgba( 38,27,93,0 ) ), color-stop(100%, rgba(38,27,93,1) ) );
+	}
+
+	.gradient-right {
+		position: absolute;
+		right: 0;
+		width: 200px;
+		height: 100%;
+		background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba( 38,27,93,0 ) ), color-stop(100%, rgba(38,27,93,1) ) );
 	}
 
 </style>
