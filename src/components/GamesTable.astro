@@ -11,6 +11,7 @@ const games = [
             'https://cdn.akamai.steamstatic.com/steam/apps/553850/ss_50afbbc4d811c38fe9f64c1fc8d7eb9d9da6d24c.600x338.jpg'
         ],
         categories:'Acción, Cooperativos en línea, Multijugador, Disparos',
+        categoriesArray: ['Acción', 'Cooperativos en línea', 'Multijugador']
     },
     {
         name: '100 Dino Cats',
@@ -79,21 +80,13 @@ const games = [
 const game = games[0];
 ---
 
-<div class="flex flex-row justify-center items-center ">
+<div class="flex flex-row justify-center mb-10">
     <div class="leftCol flex flex-col">
-        <div class="mb-2">
-            <div class="h-8 relative overflow-hidden">
-                <div>Novedades y Tendencias</div>
-                <div>Lo más vendido</div>
-                <div>Próximos lanzamientos populares</div>
-                <div>Ofertas</div>
-            </div>
-        </div>
         <div>
             {games.map((game, index) => (
                 <a class="gameContainer flex flex-row mb-1 w-[618px] h-[70px]" id={`game-${index}`}>
                     <img src={game.bgImage} alt={game.name} class=" h-[70px] w-[180px] object-cover" />
-                    <div class="detailsContainer flex flex-row justify-between p-2 w-[438px]">
+                    <div class="detailsContainer flex flex-row justify-between px-2 py-1 w-[438px]">
                         <div class="flex flex-col">
                             <div class="">{game.name}</div>
                             <span class="systemImage size-5 opacity-30"/>
@@ -109,47 +102,30 @@ const game = games[0];
             ))}
         </div>
     </div>
-    <div class="rightCol  ">
-        <div class="tabPreviewContainer flex-1 relative ">
+    <div class="rightCol">
+        <div class="tabPreviewContainer w-[300px] py-2 px-3">
                 <div class="gamePreview">
-                    <div>{game.name}</div>
-                    <div>Reseñas de los usuarios en conjunto: Muy positivas (120)</div>
-                    <img src={game.images[0]} alt={game.name} class=" h-[150px] w-[274px] object-cover" />
-                    <img src={game.images[1]} alt={game.name} class=" h-[150px] w-[274px] object-cover" />
-                    <img src={game.images[2]} alt={game.name} class=" h-[150px] w-[274px] object-cover" />
-                    <img src={game.images[3]} alt={game.name} class=" h-[150px] w-[274px] object-cover" />
+                    <div class="text-[#263645] font-[21px]">{game.name}</div>
+                    <div class="px-2 py-1 mb-2 bg-[#26364599] text-xs">
+                        <span class="text-[#c6d4df]">Reseñas de los usuarios en conjunto:</span>
+                        <div><span class="text-[#66C0F4]">Mayormente positivas</span><span class="text-[#c6d4df]"> (146.160)</span></div>
+                    </div>
+                    <div class="flex flex-row">
+                        {game.categoriesArray?.map((category, index) => (
+                            <span class="text-xs text-white bg-[#26364599] p-1 mr-0.5 rounded-sm">{category}</span>
+                        ))}
+                    </div>
+                    <div class="flex flex-col mt-2 gap-1">
+                        <img src={game.images[0]} alt={game.name} class=" h-[150px] w-[274px] object-cover" />
+                        <img src={game.images[1]} alt={game.name} class=" h-[150px] w-[274px] object-cover" />
+                        <img src={game.images[2]} alt={game.name} class=" h-[150px] w-[274px] object-cover" />
+                        <img src={game.images[3]} alt={game.name} class=" h-[150px] w-[274px] object-cover" />
+                    </div>
                 </div>
         </div>
     </div>
 </div>
 
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const gameContainers = document.querySelectorAll('.gameContainer');
-        const previewContainers = document.querySelectorAll('.gamePreview');
-
-        gameContainers.forEach((gameContainer, index) => {
-            gameContainer.addEventListener('mouseover', () => {
-                hideAllPreviews();
-                showPreview(index);
-            });
-        });
-
-        function hideAllPreviews() {
-            previewContainers.forEach((previewContainer) => {
-                previewContainer.classList.remove('focus');
-            });
-        }
-
-        function showPreview(index) {
-            const previewContainer = document.getElementById(`preview-${index}`);
-            if (previewContainer) {
-                previewContainer.classList.add('focus');
-            }
-        }
-    });
-</script>
 
 <style>
     .detailsContainer{
@@ -166,6 +142,10 @@ const game = games[0];
     .gameContainer:hover .detailsContainer{
         background: linear-gradient( to right, #c6e6f8 5%,#95bcd3 95%);
         color: #10161b;
+    }
+
+    .tabPreviewContainer{
+        background: #95bcd3;
     }
 
     .gameContainer:hover .systemImage{
