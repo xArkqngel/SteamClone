@@ -1,0 +1,180 @@
+---
+const games = [
+    {
+        name: 'HELLDIVERS™ 2',
+        price: 'COL$ 149.000',
+        bgImage: 'https://cdn.akamai.steamstatic.com/steam/apps/553850/capsule_184x69.jpg?t=1707955699',
+        images: [
+            'https://cdn.akamai.steamstatic.com/steam/apps/553850/ss_8949ed7dd24a02d5ea13b08fc5c04fab400dc4bd.600x338.jpg',
+            'https://cdn.akamai.steamstatic.com/steam/apps/553850/ss_33e684e9cb2517af1599f0ca2b57d65ee82c2e51.600x338.jpg',
+            'https://cdn.akamai.steamstatic.com/steam/apps/553850/ss_0c79f56fc7be1bd0102f2ca1c92c8f0900daf4fb.600x338.jpg',
+            'https://cdn.akamai.steamstatic.com/steam/apps/553850/ss_50afbbc4d811c38fe9f64c1fc8d7eb9d9da6d24c.600x338.jpg'
+        ],
+        categories:'Acción, Cooperativos en línea, Multijugador, Disparos',
+    },
+    {
+        name: '100 Dino Cats',
+        price: 'Free to Play',
+        bgImage: 'https://cdn.akamai.steamstatic.com/steam/apps/2803000/capsule_184x69.jpg?t=1708966807',
+        images: [],
+        categories:'Free to Play , Gatos, Dinosaurios, Objetos ocultos',
+    },
+    {
+        name: '100 Robo Cats',
+        price: 'Free to Play',
+        bgImage: 'https://cdn.akamai.steamstatic.com/steam/apps/2803010/capsule_184x69.jpg?t=1708942705',
+        images: [],
+        categories:'Free to Play , Gatos, Robots, Objetos ocultos',
+    },
+    {
+        name: 'Nandle Tale: A League of Legends Story',
+        price: 'COL$ 101.099',
+        bgImage: 'https://cdn.akamai.steamstatic.com/steam/apps/1759380/capsule_184x69.jpg?t=1708719402',
+        images: [],
+        categories:'Fabricación, Rol, Un Jugador, Simuladores',
+    },
+    {
+        name: 'Please, Touch The Artwork 2',
+        price: 'Free to Play',
+        bgImage: 'https://cdn.akamai.steamstatic.com/steam/apps/2600140/capsule_184x69.jpg?t=1708975190',
+        images: [],
+        categories:'Free to Play , Aventura, Casuales, Objetos ocultos',
+    },
+    {
+        name: '100 Ninja Cats',
+        price: 'Free to Play',
+        bgImage: 'https://cdn.akamai.steamstatic.com/steam/apps/2776810/capsule_184x69.jpg?t=1707834357',
+        images: [],
+        categories:'Free to Play , Gatos, Ninjas, Objetos ocultos',
+    },
+    {
+        name: 'Suicide Squad: Kill the Justice League',
+        price: 'COL$ 196.999',
+        bgImage: 'https://cdn.akamai.steamstatic.com/steam/apps/315210/capsule_184x69.jpg?t=1707761424',
+        images: [],
+        categories: 'Cooperativos en linea, superhéroes, Acción, Disparos'
+    },
+    {
+        name: 'Nothing Together',
+        price: 'Free to Play',
+        bgImage: 'https://cdn.akamai.steamstatic.com/steam/apps/2788630/capsule_184x69.jpg?t=1708962464',
+        images: [],
+        categories:'Inactividad, Simulador de vida, Minimalistas, Basados en texto',
+    },
+    {
+        name: '100 Capitalist Cats',
+        price: 'Free to Play',
+        bgImage: 'https://cdn.akamai.steamstatic.com/steam/apps/2743080/capsule_184x69.jpg?t=1706062420',
+        images: [],
+        categories:'Free to Play , Gatos, Rompecabezas, Objetos ocultos',
+    },
+    {
+        name: 'TEKKEN 8',
+        price: 'COL$ 234.900',
+        bgImage: 'https://cdn.akamai.steamstatic.com/steam/apps/1778820/capsule_184x69.jpg?t=1708570368',
+        images: []
+    }
+]
+
+const game = games[0];
+---
+
+<div class="flex flex-row justify-center items-center ">
+    <div class="leftCol flex flex-col">
+        <div class="mb-2">
+            <div class="h-8 relative overflow-hidden">
+                <div>Novedades y Tendencias</div>
+                <div>Lo más vendido</div>
+                <div>Próximos lanzamientos populares</div>
+                <div>Ofertas</div>
+            </div>
+        </div>
+        <div>
+            {games.map((game, index) => (
+                <a class="gameContainer flex flex-row mb-1 w-[618px] h-[70px]" id={`game-${index}`}>
+                    <img src={game.bgImage} alt={game.name} class=" h-[70px] w-[180px] object-cover" />
+                    <div class="detailsContainer flex flex-row justify-between p-2 w-[438px]">
+                        <div class="flex flex-col">
+                            <div class="">{game.name}</div>
+                            <span class="systemImage size-5 opacity-30"/>
+                            <div class="overflow-hidden">
+                                <span class="text-xs text-[#384959]">{game.categories}</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-center items-center">
+                            <div >{game.price}</div>
+                        </div>
+                    </div>
+                </a>
+            ))}
+        </div>
+    </div>
+    <div class="rightCol  ">
+        <div class="tabPreviewContainer flex-1 relative ">
+                <div class="gamePreview">
+                    <div>{game.name}</div>
+                    <div>Reseñas de los usuarios en conjunto: Muy positivas (120)</div>
+                    <img src={game.images[0]} alt={game.name} class=" h-[150px] w-[274px] object-cover" />
+                    <img src={game.images[1]} alt={game.name} class=" h-[150px] w-[274px] object-cover" />
+                    <img src={game.images[2]} alt={game.name} class=" h-[150px] w-[274px] object-cover" />
+                    <img src={game.images[3]} alt={game.name} class=" h-[150px] w-[274px] object-cover" />
+                </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const gameContainers = document.querySelectorAll('.gameContainer');
+        const previewContainers = document.querySelectorAll('.gamePreview');
+
+        gameContainers.forEach((gameContainer, index) => {
+            gameContainer.addEventListener('mouseover', () => {
+                hideAllPreviews();
+                showPreview(index);
+            });
+        });
+
+        function hideAllPreviews() {
+            previewContainers.forEach((previewContainer) => {
+                previewContainer.classList.remove('focus');
+            });
+        }
+
+        function showPreview(index) {
+            const previewContainer = document.getElementById(`preview-${index}`);
+            if (previewContainer) {
+                previewContainer.classList.add('focus');
+            }
+        }
+    });
+</script>
+
+<style>
+    .detailsContainer{
+        background: #292d39;
+        background: rgba(0,0,0,0.2);
+        font-size: 15px;
+        color:#c7d5e0;
+    }
+
+    .gameContainer:hover{
+        cursor: pointer;
+    }
+
+    .gameContainer:hover .detailsContainer{
+        background: linear-gradient( to right, #c6e6f8 5%,#95bcd3 95%);
+        color: #10161b;
+    }
+
+    .gameContainer:hover .systemImage{
+        background-image: url(https://store.cloudflare.steamstatic.com/public/images/v6/icon_platform_win_dark.png?v=3);
+    }
+
+    .systemImage{
+        background-image: url(https://store.cloudflare.steamstatic.com/public/images/v6/icon_platform_win.png?v=3);
+    }
+
+
+</style>

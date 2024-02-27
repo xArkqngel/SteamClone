@@ -7,6 +7,7 @@ import Slideshow from '../components/SlideshowD&R.astro';
 import SlideshowOffers from '../components/SlideshowOffers.astro';
 import SlideshowCategories from '../components/SlideshowCategories.astro';
 import ExploreCard from '../components/ExploreCard.astro';
+import GamesTable from '../components/GamesTable.astro';
 ---
 
 <Layout title="Bienvenidos a Steam">
@@ -47,7 +48,7 @@ import ExploreCard from '../components/ExploreCard.astro';
 					<div class="flex flex-col justify-center items-center text-[15px] text-[#8f98a0] p-4 bg-[#00000033] gap-3">
 						<div>Inicia sesión para ver recomendacipnes personalizadas</div>
 						<a class="p-1 inline-block cursor-pointer text-[#d2e885] bg-gradient-to-b from-[#a4d007] to-[#536904] hover:text-white">
-							<span class="py-0 px-4">Iniciar sesión</span></a>
+							<span class="py-0 px-4 rounded-sm">Iniciar sesión</span></a>
 						<div>O <b class="text-white">regístrate</b> y únete a Steam de forma gratuita</div>
 					</div>
 				</div>
@@ -61,6 +62,9 @@ import ExploreCard from '../components/ExploreCard.astro';
 					</div>
 				</div>
 			</div>
+		</section>
+		<section>
+			<GamesTable />
 		</section>
 	</main>	
 </Layout>
