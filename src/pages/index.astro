@@ -8,6 +8,7 @@ import SlideshowOffers from '../components/SlideshowOffers.astro';
 import SlideshowCategories from '../components/SlideshowCategories.astro';
 import ExploreCard from '../components/ExploreCard.astro';
 import GamesTable from '../components/GamesTable.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="Bienvenidos a Steam">
@@ -71,14 +72,11 @@ import GamesTable from '../components/GamesTable.astro';
 				</div>
 			</div>
 		</section>
-		<section class="flex flex-col justify-center items-center bg-gradient-to-b from-[#2a475e] to-[#2a475e00] pl-10">
+		<section class="flex flex-col justify-center items-center bg-gradient-to-b from-[#2a475e] to-[#2a475e00] pr-[35px]">
 			<GamesTable />
-			<div class="flex flex-col justify-center items-start mt-10 w-[940px]">
-				<h2 class="text-sm mb-2">ACTUALIZACIONES Y OFERTAS</h2>
-
-			</div>
 		</section>
 	</main>	
+	<Footer />
 </Layout>
 
 <style>
@@ -87,6 +85,7 @@ import GamesTable from '../components/GamesTable.astro';
 		color: white;
 		font-size: 20px;
 		line-height: 1.6;
+		overflow-x: hidden;
 	}
 	
 	.gradient-left {

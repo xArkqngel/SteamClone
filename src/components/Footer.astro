@@ -1,0 +1,60 @@
+---
+import Github from "../icons/Github.astro";
+import AstroIcon from "../icons/AstroIcon.astro";
+import HTML from "../icons/HTML.astro";
+import CSS from "../icons/CSS.astro";
+import Tailwind from "../icons/Tailwind.astro";
+import TS from "../icons/TS.astro";
+---
+
+<footer class="bg-[#171a21] flex flex-row items-center justify-center pb-4">
+    <div class="footer w-[940px] pt-4">
+        <div class="rule"></div>
+        <div class="flex flex-row justify-between items-center pt-1">
+            <img src="https://store.akamai.steamstatic.com/public/images/footerLogo_valve_new.png" alt="logo" class="h-6">
+            <img src="https://store.akamai.steamstatic.com/public/images/v6/logo_steam_footer.png" alt="logo" class="h-6" >
+        </div>
+        <div class="text-[#8F98A0] text-[12px]">
+            <div>© 2024 Valve Corporation. Todos los derechos reservados. Todas las marcas registradas pertenecen a sus respectivos dueños en EE. UU. y otros países.</div>
+            <div>Todos los precios incluyen IVA (donde sea aplicable).
+                <a> Política de privacidad </a> |
+                <a> Información legal </a> |
+                <a> cuerdo de Suscriptor a Steam </a> |
+                <a> Reembolsos </a> |
+                <a> Cookies </a>
+            </div>
+        </div>
+        <div class="rule"></div>
+        <div class="flex flex-col items-center justify-center text-[#C6D4DF]">
+            <div class="flex flex-row items-center">Steam Clone (ES) Developed by xArkqngel
+                <a class="cursor-pointer " href="https://github.com/xArkqngel">
+                    <Github class="size-5 ml-2" />
+                </a>
+            </div>
+            <div class="flex flex-col text-sm"> Developed with
+                <div class="flex flex-row gap-2 text-[#C6D4DF]">
+                    <AstroIcon class="size-5"/>
+                    <HTML class="size-5" />
+                    <CSS class="size-5" />
+                    <Tailwind class="size-5" />
+                    <TS class="size-5" />
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    .rule {
+        border-top: 1px solid #363c44;
+        height: 8px;
+    }
+    .footer a {
+        color: #C6D4DF;
+        cursor: pointer;
+    }
+
+    .footer a:hover {
+        color: white;
+    }
+</style>
